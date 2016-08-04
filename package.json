@@ -1,0 +1,26 @@
+{
+  "name": "magno",
+  "version": "0.0.1",
+  "description": "Sistema de manejo de máquinas virtuales para servidores en producción o desarrollo",
+  "main": "main",
+  "scripts": {
+    "test": "test"
+  },
+  "dependencies":{
+    "virtual-box":"^0.0.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/voxsoftware/magno.git"
+  },
+  "keywords": [
+    "virtualbox",
+    "machine"
+  ],
+  "author": "James Suárez <xtreme.maicolxt94@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/voxsoftware/magno/issues"
+  },
+  "homepage": "https://github.com/voxsoftware/magno#readme"
+}

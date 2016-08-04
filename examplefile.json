@@ -1,0 +1,33 @@
+{
+
+	"name": "magno-7vox",
+	"description":"",
+	"box":{
+		"localpath": "magno7.ova",
+		"uri": "https://mega.co.nz/#!2FsAwA5S!zdqecvCzBVc2oeGGcl8LqDW6i7Dfsa2HUemnocWoqN0",
+		"type": "mega"
+	},	
+	"os": "linux64",
+	"config": ".7vox",
+	"default": {
+		"user": "ubuntu",
+		"password": "1",
+		"ip": "192.168.20.10",
+		"memory":448,
+		"cpus": 1,
+		"folders":[
+			{
+				"from": "/Volumes/Info/dev",
+				"to": "/home/ubuntu/Code"
+			}
+		],
+		"sites":[
+			{
+				"name": "default", 
+				"url": "test.dev",
+				"to": "/home/ubuntu/Code",
+				"type": "PHP"
+			}
+		]
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"org":{
+		"voxsoftware":{
+			"Magno":{
+				"readPath": "./src",
+				"Box":{
+					"readPath": "./src/Box",
+					"Settings":{
+						"readPath": "./src/Box/Settings"
+					}
+				},
+				"BoxInstallation":{
+					"readPath": "./src/BoxInstallation"
+				}
+			}
+		}
+	}
+}
