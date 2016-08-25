@@ -415,7 +415,7 @@ server {
 			// MONTAR ...
 			await this.virtualBoxMachine.exec({
 				"path": "/usr/bin/sudo",
-				"arguments": ["mount", "-o", "rw,dmode=777,uid=1000,gid=1000", "-t", "vboxsf", "FOLDER"+i, folder.to],
+				"arguments": ["mount", "-o", "rw,dmode=777,fmode=777,uid=1000,gid=1000", "-t", "vboxsf", "FOLDER"+i, folder.to],
 				"user": this.machine.config.user,
 				"password": this.machine.config.password
 			})
