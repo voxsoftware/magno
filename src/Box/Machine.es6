@@ -92,12 +92,17 @@ class Machine extends EventEmitter{
 			}
 
 			if(create){
+
 				network= await this.manager.networks.create(Vbox.NetworkType.HostOnly)
 				await adap.setNetwork(network)
 			}
 			else{
+			
+				//vw.info("HERE")
 				network= await adap.network()
 			}
+
+			//vw.info(network)
 
 
 			ip= this.config.ip.split(".")

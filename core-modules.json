@@ -9,6 +9,10 @@
 						"readPath": "./src/Box/Settings"
 					}
 				},
+
+				"Guest":{
+					"readPath": "./src/Guest"
+				},
 				"BoxInstallation":{
 					"readPath": "./src/BoxInstallation"
 				}

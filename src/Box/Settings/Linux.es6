@@ -34,7 +34,8 @@ class Linux extends Settings.Manager{
 
 	async configureIp(){
 		var content= await this.contentForIp()
-		var f= "/home/" + this.machine.config.user + "/interfaces"
+		var fdir= "/home/" + this.machine.config.user
+		var f= fdir + "/interfaces"
 		var dest= "/etc/network/interfaces"
 		await this.virtualBoxMachine.writeFile({
 			"content": content,
@@ -272,7 +273,7 @@ server {
 		// Verificar si el sitio necesita que se ejecute algún comando ...
 		if(site.execute){
 			var f= "/home/" + this.machine.config.user + "/start-site"
-			vw.info(site.execute)
+			//vw.info(site.execute)
 			await this.virtualBoxMachine.exec({
 				"path": "/usr/bin/env",
 				"arguments": ["node", f, site.url,site.execute.path].concat(site.execute.arguments||[]),
