@@ -68,10 +68,10 @@ class Sites{
 		var sites= this.config.sites
 		for(var i=0;i<sites.length;i++){
 			if(sites[i].type=="PHP")
-				await this.configurePhpSite(sites[i])
+				this.configurePhpSite(sites[i])
 
 			else if(sites[i].type=="Proxy")
-				await this.configureProxySite(sites[i])
+				this.configureProxySite(sites[i])
 		}
 
 		// Restart service ...
@@ -80,7 +80,7 @@ class Sites{
 	}
 
 
-	async configureProxySite(site){
+	configureProxySite(site){
 
 		var domain= site.url
 		var port= site.port
