@@ -100,7 +100,7 @@ server {
 		
 		var file= "/etc/nginx/sites-enabled/"+domain
 		var file2= "/etc/nginx/sites-available/"+domain
-		var f= "/home/" + this.machine.config.user + "/" + domain
+		//var f= "/home/" + this.machine.config.user + "/" + domain
 
 		Fs.sync.writeFile(file, content)
 		Fs.sync.chmod(file, '664')
@@ -175,7 +175,7 @@ server {
 
 		var file= "/etc/nginx/sites-enabled/"+domain
 		var file2= "/etc/nginx/sites-available/"+domain
-		var f= "/home/" + this.machine.config.user + "/" + domain
+		//var f= "/home/" + this.machine.config.user + "/" + domain
 
 	
 
