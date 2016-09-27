@@ -6,7 +6,7 @@ class Sites{
 	
 
 	constructor(){
-		var file= Path.join(process.env.HOME, "MachineConfig")
+		var file= Path.join(process.env.HOME, "MachineConfig", "magno.config.json")
 		this.$= require(file)
 
 	}
