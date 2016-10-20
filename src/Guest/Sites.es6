@@ -108,6 +108,13 @@ class Sites{
 			catch(e){}
 		}
 
+		try{
+			// Tratar de desmontar primero
+			Cp.execSync(`umount "${mount.dest}"`)
+		}
+		catch(e){
+
+		}
 		
 		Cp.execSync(`mount -t 9p -o trans=virtio,version=9p2000.L ${mount.src} "${mount.dest}"`)
 	}
