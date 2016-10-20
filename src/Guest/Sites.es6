@@ -6,7 +6,14 @@ class Sites{
 	
 
 	constructor(){
-		var file= Path.join(process.env.HOME, "MachineConfig", "machine.config.json")
+		var dir= Path.join(process.env.HOME, "MachineConfig",)
+		// Lo primero es intentar montar el sitio donde va MachineConfig
+		this.configureVirtioMount({
+			src: "MachineConfig",
+			dest: dir
+		})
+
+		var file= Path.join(dir, "machine.config.json")
 		this.$= require(file)
 
 	}
@@ -65,6 +72,15 @@ class Sites{
 	configure(){
 		Sites.rmDir("/etc/nginx/sites-enabled")
 		Sites.rmDir("/etc/nginx/sites-available")
+
+
+		var mountPoints= this.config.virtio
+
+		for(var i=0;i<mountPoints.length;i++){
+			this.configureVirtioMount(sites[i])			
+		}
+
+
 		var sites= this.config.sites
 		for(var i=0;i<sites.length;i++){
 			if(sites[i].type=="PHP")
@@ -77,6 +93,18 @@ class Sites{
 		// Restart service ...
 		Cp.execSync("service nginx restart")
 
+
+
+
+	}
+
+
+	configureVirtioMount(mount){
+		if(!Fs.sync.exists(mount.dest))
+			Fs.sync.mkdir(mount.dest)
+
+		Fs.sync.chmod(mount.dest, '666')
+		Cp.execSync(`mount -t 9p -o trans=virtio,version=9p2000.L ${mount.src} "${mount.dest}"`)
 	}
 
 
