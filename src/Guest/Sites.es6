@@ -77,7 +77,7 @@ class Sites{
 		var mountPoints= this.config.virtio
 
 		for(var i=0;i<mountPoints.length;i++){
-			this.configureVirtioMount(sites[i])			
+			this.configureVirtioMount(mountPoints[i])			
 		}
 
 
