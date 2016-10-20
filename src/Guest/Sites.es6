@@ -6,7 +6,7 @@ class Sites{
 	
 
 	constructor(){
-		var dir= Path.join(process.env.HOME, "MachineConfig",)
+		var dir= Path.join(process.env.HOME, "MachineConfig")
 		// Lo primero es intentar montar el sitio donde va MachineConfig
 		this.configureVirtioMount({
 			src: "MachineConfig",
