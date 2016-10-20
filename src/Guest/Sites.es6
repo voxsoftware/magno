@@ -100,10 +100,15 @@ class Sites{
 
 
 	configureVirtioMount(mount){
-		if(!Fs.sync.exists(mount.dest))
+		if(!Fs.sync.exists(mount.dest)){
 			Fs.sync.mkdir(mount.dest)
+			try{
+				Fs.sync.chmod(mount.dest, '666')
+			}
+			catch(e){}
+		}
 
-		Fs.sync.chmod(mount.dest, '666')
+		
 		Cp.execSync(`mount -t 9p -o trans=virtio,version=9p2000.L ${mount.src} "${mount.dest}"`)
 	}
 
